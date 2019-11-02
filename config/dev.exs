@@ -68,8 +68,8 @@ config :phoenix, :plug_init_mode, :runtime
 
 # Configure your database
 config :time2, Time2.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "time2",
+  password: "theiY7IeDaiP",
   database: "time2_dev",
   hostname: "localhost",
   pool_size: 10
