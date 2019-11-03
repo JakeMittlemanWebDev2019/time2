@@ -21,9 +21,3 @@ Repo.insert!(%User{name: "Bob Gregory", email: "bobG@gmail.com", is_manager: fal
 Repo.insert!(%User{name: "Rebecca Smalls", email: "becky@gmail.com", is_manager: false, password: "becca"})
 
 # Jobs
-Repo.insert!(%Job{name: "Write TPS Report", desc: "Due Friday", budget: 7, manager: Time1.Users.get_user_by_email("RSam@gmail.com").id})
-Repo.insert!(%Job{name: "Job 2", desc: "Important", budget: 1, manager: Time1.Users.get_user_by_email("Lassy@gmail.com").id})
-Repo.insert!(%Job{name: "Pick up Dry Cleaning", desc: "Tip Them", budget: 3, manager: Time1.Users.get_user_by_email("Lassy@gmail.com").id})
-Repo.insert!(%Job{name: "I dunno", desc: "awef", budget: 4, manager: Time1.Users.get_user_by_email("RSam@gmail.com").id})
-Repo.insert!(%Job{name: "B", desc: "B desc", budget: 6, manager: Time1.Users.get_user_by_email("RSam@gmail.com").id})
-Repo.insert!(%Job{name: "Get Married", desc: "Buy a Present", budget: 4, manager: Time1.Users.get_user_by_email("RSam@gmail.com").id})
