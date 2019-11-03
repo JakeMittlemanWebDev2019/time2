@@ -31,7 +31,6 @@ defmodule Time2Web.Router do
 
     get "/", PageController, :index
     get "/*path", PageController, :index
-    resources "/users", UserController, except: [:new, :edit]
   end
 
   # Other scopes may use custom stacks.
