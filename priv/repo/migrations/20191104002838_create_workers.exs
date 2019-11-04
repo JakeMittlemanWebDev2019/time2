@@ -5,7 +5,7 @@ defmodule Time2.Repo.Migrations.CreateWorkers do
     create table(:workers) do
       add :name, :string, null: false
       add :email, :string, null: false
-      add :password_hash, :string, null: false
+      # add :password_hash, :string, null: false
       add :manager_id, references(:managers, on_delete: :nothing), null: false
 
       timestamps()
