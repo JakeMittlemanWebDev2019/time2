@@ -23,7 +23,10 @@ defmodule Time2Web.Router do
   scope "/ajax", Time2Web do
     pipe_through :ajax
 
-    resources "/users", UserController, except: [:new, :edit]
+    resources "/workers", WorkerController, except: [:new, :edit]
+    resources "/managers", ManagerController, except: [:new, :edit]
+    resources "/timesheets", TimesheetController, except: [:new, :edit]
+    resources "/tasks", TaskController, except: [:new, :edit]
     resources "/jobs", JobController, except: [:new, :edit]
     resources "/sessions", SessionController, only: [:create], singleton: true
   end

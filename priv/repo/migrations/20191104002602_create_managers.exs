@@ -1,11 +1,11 @@
-defmodule Time2.Repo.Migrations.CreateUsers do
+defmodule Time2.Repo.Migrations.CreateManagers do
   use Ecto.Migration
 
   def change do
-    create table(:users) do
+    create table(:managers) do
       add :name, :string, null: false
       add :email, :string, null: false
-      add :is_manager, :boolean, default: false, null: false
+      add :password_hash, :string, null: false
 
       timestamps()
     end
