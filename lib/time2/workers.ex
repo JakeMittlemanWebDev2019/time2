@@ -36,6 +36,7 @@ defmodule Time2.Workers do
 
   """
   def get_worker!(id), do: Repo.get!(Worker, id)
+  def get_worker(id), do: Repo.get(Worker, id)
 
   @doc """
   Creates a worker.
