@@ -111,7 +111,12 @@ function jobs(st0 = { job_code: null, name: "", budget: null, desc: "" }, action
   return st0;
 }
 
-function session(st0 = null, action) {
+let session0 = localStorage.getItem('session');
+console.log(session0);
+if (session0) {
+  session0 = JSON.parse(session0);
+}
+function session(st0 = session0, action) {
   switch (action.type) {
     case 'LOG_IN':
       return action.data;

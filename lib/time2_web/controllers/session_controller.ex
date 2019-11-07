@@ -7,6 +7,7 @@ defmodule Time2Web.SessionController do
 
   def create(conn, %{"email" => email, "password" => password}) do
     user = Users.authenticate_user(email, password)
+    IO.puts("here")
     if user do
       token = Phoenix.Token.sign(conn, "session", user.id)
       resp = %{token: token, user_id: user.id, user_name: user.name}

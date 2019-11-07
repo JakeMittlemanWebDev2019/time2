@@ -2,6 +2,7 @@ import store from './store';
 
 export function post(path, body) {
   let state = store.getState();
+  console.log(state);
   let token = state.session.token;
 
   return fetch('/ajax' + path, {
@@ -60,4 +61,27 @@ export function submit_new_timesheet(form) {
       });
     }
   });
+}
+
+export function submit_login(form) {
+  let state = store.getState();
+  let data = state.forms.login;
+
+  post('/sessions', data)
+    .then((resp) => {
+      if (resp.token) {
+        localStorage.setItem('session', JSON.stringify(resp));
+        store.dispatch({
+          type: 'LOG_IN',
+          data: resp,
+        });
+        form.redirect('/');
+      }
+      else {
+        store.dispatch({
+          type: 'CHANGE_LOGIN',
+          data: { errors: JSON.stringify(resp.errors) },
+        });
+      }
+    });
 }

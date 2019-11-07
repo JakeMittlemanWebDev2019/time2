@@ -18,9 +18,9 @@ alias Time2.Jobs.Job
 
 # Users
 Repo.insert!(%Manager{name: "Robert Samuels", email: "RSam@gmail.com", password_hash: Argon2.hash_pwd_salt("test")})
-Repo.insert!(%Manager{name: "Lauren Simpson", email: "Lassy@gmail.com", password_hash: "lassy"})
-Repo.insert!(%Worker{name: "Bob Gregory", email: "bobG@gmail.com", password_hash: "test2", manager_id: 1})
-Repo.insert!(%Worker{name: "Rebecca Smalls", email: "becky@gmail.com",  password_hash: "becca", manager_id: 2})
+Repo.insert!(%Manager{name: "Lauren Simpson", email: "Lassy@gmail.com", password_hash: Argon2.hash_pwd_salt("lassy")})
+Repo.insert!(%Worker{name: "Bob Gregory", email: "bobG@gmail.com", password_hash: Argon2.hash_pwd_salt("test2"), manager_id: 1})
+Repo.insert!(%Worker{name: "Rebecca Smalls", email: "becky@gmail.com",  password_hash: Argon2.hash_pwd_salt("becca"), manager_id: 2})
 
 # Jobs
 Repo.insert!(%Job{job_code: "JOB_01", budget: 4, name: "Buy a Wrench", desc: "Needed for Tuesday"})

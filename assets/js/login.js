@@ -45,7 +45,7 @@ class Login extends React.Component {
         <h1>Log In</h1>
         {error_msg}
         <Form.Group controlId="email">
-          <Form.Label>E-mail</Form.Label>
+          <Form.Label>Email</Form.Label>
           <Form.Control type="text" onChange={
             (ev) => this.changed({ email: ev.target.value })} />
         </Form.Group>

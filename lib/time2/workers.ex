@@ -38,6 +38,10 @@ defmodule Time2.Workers do
   def get_worker!(id), do: Repo.get!(Worker, id)
   def get_worker(id), do: Repo.get(Worker, id)
 
+  def get_worker_by_email(email) do
+    Repo.get_by(Worker, email: email)
+  end
+
   @doc """
   Creates a worker.
 
